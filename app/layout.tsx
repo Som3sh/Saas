@@ -6,6 +6,7 @@ import { Navbar } from "./components/Navbar";
 import prisma from "./lib/db";
 import { getKindeServerSession } from "@kinde-oss/kinde-auth-nextjs/server";
 import { unstable_noStore as noStore } from "next/cache";
+import Header from "./components/Header";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -42,15 +43,9 @@ export default async function RootLayout({
       <body
         className={`${inter.className} ${data?.colorScheme ?? "theme-orange"}`}
       >
-        <ThemeProvider
-          attribute="class"
-          defaultTheme="system"
-          enableSystem
-          disableTransitionOnChange
-        >
-          <Navbar />
-          {children}
-        </ThemeProvider>
+        <Header />
+        <Navbar />
+        {children}
       </body>
     </html>
   );
