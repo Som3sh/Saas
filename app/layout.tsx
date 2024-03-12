@@ -44,7 +44,7 @@ export default async function RootLayout({
         className={`${inter.className} ${data?.colorScheme ?? "theme-orange"}`}
       >
         <Header />
-        <Navbar />
+
         {children}
       </body>
     </html>
